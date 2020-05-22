@@ -6,49 +6,11 @@
     <title>Coronavirus Tracker</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
-    <style>
-        .hvr-shutter-out-horizontal {
-            display: inline-block;
-            vertical-align: middle;
-            -webkit-transform: perspective(1px) translateZ(0);
-            transform: perspective(1px) translateZ(0);
-            box-shadow: 0 0 1px rgba(0, 0, 0, 0);
-            position: relative;
-            background: #fff;
-            -webkit-transition-property: color;
-            transition-property: color;
-            -webkit-transition-duration: 0.3s;
-            transition-duration: 0.3s;
-        }
-        .hvr-shutter-out-horizontal:before {
-            content: "";
-            position: absolute;
-            z-index: -1;
-            top: 0;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background: #b3e5fc;
-            -webkit-transform: scaleX(0);
-            transform: scaleX(0);
-            -webkit-transform-origin: 50%;
-            transform-origin: 50%;
-            -webkit-transition-property: transform;
-            transition-property: transform;
-            -webkit-transition-duration: 0.3s;
-            transition-duration: 0.3s;
-            -webkit-transition-timing-function: ease-out;
-            transition-timing-function: ease-out;
-        }
-        .hvr-shutter-out-horizontal:hover:before, .hvr-shutter-out-horizontal:focus:before, .hvr-shutter-out-horizontal:active:before {
-            -webkit-transform: scaleX(1);
-            transform: scaleX(1);
-        }
-    </style>
+    <link href="../static/style.css" th:href="@{/style.css}" rel="stylesheet"/>
 </head>
 
-<body>
-<nav class="navbar navbar-expand-lg navbar-dark shadow" style="background-color: #0277bd">
+<body class="body-bg">
+<nav class="navbar navbar-expand-lg navbar-dark shadow nav-bg">
     <a class="navbar-brand" th:href="@{/}">COVID-19 Cases</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -70,7 +32,7 @@
 
     <h1>Total Cases</h1>
 
-    <div class="jumbotron" style="background-color: #b3e5fc">
+    <div class="jumbotron jumbo-bg shadow">
         <h1 class="display-4" th:text="${totalReportedCases}">Total Cases</h1>
         <p class="lead">Total cases reported as of today</p>
         <hr class="my-4">
@@ -81,7 +43,7 @@
     </div>
 
     <div class="row justify-content-center">
-        <div class="card col-md-5 col-sm-12 col-xs-12 mr-md-3 shadow hvr-shutter-out-horizontal">
+        <div class="card col-md-5 col-sm-12 col-xs-12 mr-md-3 shadow hvr-outline-out">
             <div class="card-body text-center">
                 <h3 class="card-title">United States Cases</h3>
                 <p>View the total reported cases in the United States</p>
@@ -89,7 +51,7 @@
             <a th:href="@{usa-cases}" class="stretched-link"></a>
         </div>
 
-        <div class="card col-md-5 col-sm-12 col-xs-12 mr-md-3 shadow hvr-shutter-out-horizontal">
+        <div class="card col-md-5 col-sm-12 col-xs-12 mr-md-3 shadow hvr-outline-out">
             <div class="card-body text-center">
                 <h3 class="card-title">Global Cases</h3>
                 <p>View the total reported cases outside of the United States</p>
